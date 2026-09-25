@@ -1,0 +1,17 @@
+{
+  "name": "telegram-ai-bot",
+  "version": "2.0.0",
+  "private": true,
+  "description": "Telegram AI bot v2 — with rate limiting, usage tracking, image queue, cleanup, admin stats",
+  "main": "api/webhook.js",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "set-webhook": "node -e \"fetch(process.env.VERCEL_URL?('https://'+process.env.VERCEL_URL+'/api/set-webhook?key='+process.env.SETUP_KEY):'http://localhost:3000/api/set-webhook?key='+process.env.SETUP_KEY).then(r=>r.json()).then(console.log)\""
+  },
+  "dependencies": {
+    "@google/genai": "^1.15.0",
+    "firebase-admin": "^13.5.0"
+  }
+}
