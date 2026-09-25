@@ -1,11 +1,23 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "functions": {
-    "api/webhook.js": { "maxDuration": 60, "memory": 1024 },
-    "api/cron.js": { "maxDuration": 60, "memory": 1024 }
+    "api/webhook.js": {
+      "maxDuration": 60,
+      "memory": 1024
+    },
+    "api/cron.js": {
+      "maxDuration": 60,
+      "memory": 1024
+    }
   },
   "crons": [
-    { "path": "/api/cron", "schedule": "*/30 * * * * *" },
-    { "path": "/api/cleanup", "schedule": "0 3 * * *" }
+    {
+      "path": "/api/cron",
+      "schedule": "* * * * *"
+    },
+    {
+      "path": "/api/cleanup",
+      "schedule": "0 3 * * *"
+    }
   ]
 }
